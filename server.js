@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const pingRoute = require("./routes/pingRoute");
+const postRoute = require("./routes/postRoute");
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(bodyParser.json()); // application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(pingRoute);
+app.use(postRoute);
+
 
 app.get("/", (req, res) => {
     // Health Check
